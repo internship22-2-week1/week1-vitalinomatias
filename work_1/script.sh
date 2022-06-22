@@ -9,9 +9,7 @@ else
     cd $proyecto
     mkdir assets
     cd assets
-    mkdir css
-    mkdir img
-    mkdir js
+    mkdir css img js
     cd css
     css="style.css"
     echo "body{" >> $css
