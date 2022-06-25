@@ -18,6 +18,7 @@ class Calculadora {
         let positivos;
         if (this.cadena.includes('/')){
             console.log('division');
+            console.log(`caden ${this.cadena}`);
             return this.operacion('/');
         } else if (this.cadena.includes("*") ) {
             console.log('multiplicacion');
@@ -25,16 +26,13 @@ class Calculadora {
         } else if (this.cadena.includes('-')) {
             console.log('resta');
             if (this.cadena[0] == '-') {
-                console.log('entro al if');
                 return this.cambioPosicion(this.cadena);
-
             } else {
-                console.log('no entro al if');
                 return this.operacion('-');
             }
         } else if (this.cadena.includes('+')) {
             this.cadena = this.cadena.split('+');
-            console.log(this.cadena);
+            // console.log(this.cadena);
             console.log('suma');
             for (let i = 0; i < this.cadena.length; i++) {
                 total += parseFloat(this.cadena[i]);
@@ -111,7 +109,7 @@ class Calculadora {
     }
 
     cambioPosicion(cadena){
-        console.log('esta es la cadena',cadena);
+        // console.log('esta es la cadena',cadena);
         let posicion;
         for (let i = 1; i < cadena.length; i++) {
             if (cadena[i] == '+' || cadena[i] == '-' || cadena[i] == '*' || cadena[i] == '/') {                
@@ -121,8 +119,8 @@ class Calculadora {
                     cadena = cadena.substring(i+1);
                 }                
                 posicion = i;
-                console.log(cadena);
-                console.log(this.cadena);
+                // console.log(cadena);
+                // console.log(this.cadena);
                 break
             }
         }

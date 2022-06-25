@@ -22,3 +22,14 @@
 
 ![img](./../assets/work_5/uno.png)
 
+
+
+Al presentar El día viernes el reto no estaba funcionando bien el programa, volvi a corregir y funciona como se solicito probando con las cadenas que se solicitaron el día viernes y probando diferentes cadenas.
+
+- ![img](./../assets/work_5/dos.png)
+
+
+- ![img](./../assets/work_5/tres.png)
+
+
+- ![img](./../assets/work_5/cuatro.png)
