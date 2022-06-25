@@ -59,21 +59,31 @@ class Calculadora {
             if (operacionAnterior[i] == '+' || operacionAnterior[i] == '-' || operacionAnterior[i] == '*' || operacionAnterior[i] == '/') {
                 valorAnterior = operacionAnterior.substring(i+1);
                 posicionAnterior = i+1;
+                // console.log(`operacionAnterior ${operacionAnterior}`);
+                // console.log(`valor Anterior ${valorAnterior}`);
+                // console.log(`posicion anterior ${posicionAnterior}`);
                 break
             } else {
                 valorAnterior = operacionAnterior.substring(0)
                 posicionAnterior = ''; 
+                // console.log(`operacionAnterior ${operacionAnterior}`);
+                // console.log(`valor Anterior ${valorAnterior}`);
+                // console.log(`posicion anterior ${posicionAnterior}`);
             }
         }
 
         for (let i = 0; i <=operacionSiguiente.length; i++) {
-            if (operacionAnterior[i] == '+' || operacionAnterior[i] == '-' || operacionAnterior[i] == '*' || operacionAnterior[i] == '/') {
+            if (operacionSiguiente[i] == '+' || operacionSiguiente[i] == '-' || operacionSiguiente[i] == '*' || operacionSiguiente[i] == '/') {
                 valorSiguiente = operacionSiguiente.substring(0,i);
                 posicionSiguiente = operacionSiguiente.substring(valorSiguiente.length)
+                // console.log(`operacion ${operacionAnterior}`);
+                // console.log(`valor Anterior ${valorAnterior}`);
+                // console.log(`posicion anterior ${posicionAnterior}`);
                 break
             } else {
                 valorSiguiente = operacionSiguiente.substring(0)
                 posicionSiguiente = ''; 
+                // posicionSiguiente = operacionSiguiente.substring(valorSiguiente.length)
             }
         }
 
@@ -96,8 +106,6 @@ class Calculadora {
         this.cadena = nuevaCadena;
         console.log('resultado', resultado);
         console.log('nuevaCadena', nuevaCadena);
-        console.log('posicionAnteriro', posicionAnterior);
-        console.log('posicionsiguiente', posicionSiguiente);
         
         return this.verificarOperaciones(this.cadena)
     }
@@ -106,8 +114,12 @@ class Calculadora {
         console.log('esta es la cadena',cadena);
         let posicion;
         for (let i = 1; i < cadena.length; i++) {
-            if (cadena[i] == '+' || cadena[i] == '-' || cadena[i] == '*' || cadena[i] == '/') {
-                cadena = cadena.substring(i+1);
+            if (cadena[i] == '+' || cadena[i] == '-' || cadena[i] == '*' || cadena[i] == '/') {                
+                if (cadena[i]== '-') {
+                    cadena = cadena.substring(i);
+                } else {
+                    cadena = cadena.substring(i+1);
+                }                
                 posicion = i;
                 console.log(cadena);
                 console.log(this.cadena);
@@ -130,6 +142,8 @@ class Calculadora {
 
 const cadena = '3+5*2-9/6';
 
-const cadena1 = '4-7+8+9/2*3'
+const cadena1 = '4-7+8+9/2*3';
 
-const calculadora = new Calculadora(cadena1);
+const cadena3  = '-44-76+83+92/21*35'
+
+const calculadora = new Calculadora(cadena3);
